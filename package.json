@@ -5,11 +5,16 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "prepare" : "npm run build"
   },
-  "keywords": [],
+  "keywords": ["fsi"],
   "author": "fsi",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fsi-dev/fsi-js-sdk"
+  },
   "devDependencies": {
     "@types/jest": "^27.0.1",
     "jest": "^27.1.0",
@@ -21,5 +26,6 @@
     "@babel/preset-typescript": "^7.15.0",
     "axios": "^0.21.1",
     "babel-jest": "^27.1.0"
-  }
+  },
+  "files": ["dist/**/*"],
 }
