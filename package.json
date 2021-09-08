@@ -27,5 +27,5 @@
     "axios": "^0.21.1",
     "babel-jest": "^27.1.0"
   },
-  "files": ["dist/**/*"],
+  "files": ["dist/**/*"]
 }
