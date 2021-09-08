@@ -8,8 +8,8 @@ const getAllSettlements: ApiCallMethodInterface = (secretKey: string, body: obje
     return apiCall(url,'GET', secretKey, body, header);
 }
 
-const getSettlementBreakdown: ApiCallMethodInterface = (secretKey: string, body: object, header?: object) => {
-    let url: string = providerPrefix + 'settlements/RDFeasdfa/transactions';
+const getSettlementBreakdown: ApiCallMethodInterface = (secretKey: string, body: object, header?: object, routeParam?:string) => {
+    let url: string = providerPrefix + `settlements/${routeParam}/transactions`;
     return apiCall(url,'GET', secretKey, body, header);
 }
 

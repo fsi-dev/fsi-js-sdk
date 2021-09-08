@@ -193,7 +193,7 @@ let initializer = Fsi(testKey, provider);
 /* Settlement */
 
     // getAllSettlements
-    describe('Settlement: list Transactions', () => {
+    describe('Settlement: get all settlements', () => {
         let body: object = {
             page: 1,
             from: '2010-08-14 13:48',
@@ -218,13 +218,14 @@ let initializer = Fsi(testKey, provider);
         })
     });
 
-    // fetchTransactions
-    describe('Settlement: fetch Transactions', () => {
+    // getsetllementBreakdown
+    describe('Settlement: get settlement breakdown', () => {
         let body: object = {
             unique_reference: 'SPKL100007629691012078221614840477696'
         };
+        let ref: string = 'RDFeasdfa';
 
-        let response = initializer.fetchTransaction(body, header);
+        let response = initializer.fetchTransaction(body, header, ref);
 
         it('Should not have code error', () => {
             return response.then( res => expect(res.codeError).toBe(false));

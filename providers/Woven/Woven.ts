@@ -23,5 +23,5 @@ export default class Woven {
     
     // Settlements
     getAllSettlements = (body: object, header?: object) => { return wovenSettlements.getAllSettlements(this.secretKey, body, header) };
-    getSettlementBreakdown = (body: object, header?: object) => { return wovenSettlements.getSettlementBreakdown(this.secretKey, body, header) };
+    getSettlementBreakdown = (body: object, header?: object, routeParam?: string) => { return wovenSettlements.getSettlementBreakdown(this.secretKey, body, header, routeParam) };
 }
