@@ -1,14 +1,17 @@
 {
   "name": "fsi-js-sdk",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
-  "main": "./dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "prepare" : "npm run build"
+    "prepare": "npm run build"
   },
-  "keywords": ["fsi"],
+  "keywords": [
+    "fsi"
+  ],
   "author": "fsi",
   "license": "ISC",
   "repository": {
@@ -16,16 +19,18 @@
     "url": "git+https://github.com/fsi-dev/fsi-js-sdk"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.1",
-    "jest": "^27.1.0",
-    "typescript": "^4.3.5",
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-typescript": "^7.15.0",
-    "babel-jest": "^27.1.0"
+    "@types/jest": "^27.0.1",
+    "babel-jest": "^27.1.0",
+    "jest": "^27.1.0",
+    "typescript": "^4.3.5"
   },
   "dependencies": {
     "axios": "^0.21.1"
   },
-  "files": ["dist/**/*"]
+  "files": [
+    "dist/**/*"
+  ]
 }

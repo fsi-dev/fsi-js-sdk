@@ -1,4 +1,5 @@
 import Fsi from '../index';
+// const Fsi = require('../index')
 
 const testKey: string = 'BpB8hcJslB3iRbDvUoJE0hBEFMkHuKU51624969834';
 const provider = 'AfricasTalking';
