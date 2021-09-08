@@ -2,7 +2,7 @@
   "name": "fsi-js-sdk",
   "version": "1.0.1",
   "description": "",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest",
