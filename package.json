@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc",
-    "test": "tsc && jest",
-    "local-test": "tsc && cd ./src && node index.js"
+    "build": "tsc",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
