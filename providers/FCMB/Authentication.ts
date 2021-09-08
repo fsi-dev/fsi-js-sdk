@@ -1,5 +1,5 @@
 import apiCall from "../../helpers/rest";
-import { ApiCallMethodInterface } from "../../config/Constants";
+import { ApiCallMethodInterface } from "../../helpers/GeneralHelpers";
 
 const providerPrefix = 'fcmb/authentication/';
 

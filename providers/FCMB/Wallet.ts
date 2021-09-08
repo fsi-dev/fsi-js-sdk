@@ -1,5 +1,6 @@
 import apiCall from "../../helpers/rest";
-import { ApiCallMethodInterface, Methods } from "../../config/Constants";
+import { Methods } from "../../config/Constants";
+import { ApiCallMethodInterface } from "../../helpers/GeneralHelpers";
 
 const providerPrefix = 'fcmb/wallet/';
 
