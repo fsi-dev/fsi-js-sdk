@@ -1,0 +1,14 @@
+import { ApiCallMethodInterface } from "../../config/Constants";
+declare const bankToBankTransfers: ApiCallMethodInterface;
+declare const bankToBankInternalTransfers: ApiCallMethodInterface;
+declare const internalTransfers: ApiCallMethodInterface;
+declare const internalTransferStatus: ApiCallMethodInterface;
+declare const internalTransferDateRange: ApiCallMethodInterface;
+declare const nipTransfers: ApiCallMethodInterface;
+declare const nipTransfersDateRange: ApiCallMethodInterface;
+declare const nipCharge: ApiCallMethodInterface;
+declare const nipBanks: ApiCallMethodInterface;
+declare const nipName: ApiCallMethodInterface;
+declare const nipStatus: ApiCallMethodInterface;
+declare const nibssStatus: ApiCallMethodInterface;
+export { bankToBankTransfers, bankToBankInternalTransfers, internalTransfers, internalTransferDateRange, nibssStatus, nipStatus, nipName, internalTransferStatus, nipTransfers, nipTransfersDateRange, nipBanks, nipCharge };
