@@ -27,7 +27,7 @@ const apiCall = async (url: string, method: Methods|string, secretKey: string, b
     }catch (e) {
         return {
             codeError: true,
-            message: e.message()
+            message: 'message' //e.message()
         };
     }
 };

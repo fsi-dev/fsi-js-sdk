@@ -3,9 +3,9 @@ import { ApiCallMethodInterface } from "../../helpers/GeneralHelpers";
 
 const providerPrefix = 'sterling/';
 
-const interbankNameEnquiry: ApiCallMethodInterface = (secretKey: string, body: object, header?: object) => {
+const interbankNameEnquiry: ApiCallMethodInterface = async (secretKey: string, body: object, header?: object) => {
     let url: string = providerPrefix + 'TransferAPIs/api/Spay/InterbankNameEnquiry';
-    return apiCall(url,'GET', secretKey, body, header);
+    return await apiCall(url,'GET', secretKey, body, header);
 }
 
 const interbankTransfer: ApiCallMethodInterface = (secretKey: string, body: object, header?: object) => {
