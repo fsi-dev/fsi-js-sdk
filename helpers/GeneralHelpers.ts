@@ -10,6 +10,10 @@ interface ApiCallMethodInterface {
     ( secretKey: string, body: object, headers?: object, routeParam?: string|number): Promise<object>;
 }
 
+interface ApiCallMultiParamsInterface {
+    ( secretKey: string, body: object, headers: object| null, routeParam: object): Promise<object>;
+}
+
 const resolveProviderName = (providerName: string, secretKey: string) => {
     switch(providerName){
         case 'AfricasTalking':
@@ -33,4 +37,4 @@ const resolveProviderName = (providerName: string, secretKey: string) => {
     }
 }
 
-export { ApiCallMethodInterface, resolveProviderName };
+export { ApiCallMethodInterface, ApiCallMultiParamsInterface, resolveProviderName };

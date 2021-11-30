@@ -43,5 +43,4 @@ const checkTransferRates: ApiCallMethodInterface = (secretKey: string, body: obj
 }
 
 export { checkTransferRates, getATransferRetry, getATransfer, 
-        getAllTransfers, getTransferFee, createBulkTransfer, 
-        retryTransfer, createTransfer };
+        getAllTransfers, getTransferFee, createBulkTransfer, retryTransfer, createTransfer };
