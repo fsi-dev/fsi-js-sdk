@@ -1,10 +1,10 @@
-import AfricasTalking from "../providers/AfricasTalking/AfricasTalking";
-import EcoBank from "../providers/EcoBank/EcoBank";
-import FCMB from "../providers/FCMB/Fcmb";
-import SterlingBank from "../providers/SterlingBank/SterlingBank";
-import Woven from '../providers/Woven/Woven';
-import Zenith from '../providers/ZenithBank/ZenithBank';
-import FlutterWave from '../providers/FlutterWave/FlutterWave';
+import AfricasTalking from "../providers/AfricasTalking";
+import EcoBank from "../providers/EcoBank";
+import FCMB from "../providers/FCMB";
+import SterlingBank from "../providers/SterlingBank";
+import Woven from '../providers/Woven';
+import Zenith from '../providers/ZenithBank';
+import FlutterWave from '../providers/FlutterWave';
 
 interface ApiCallMethodInterface {
     ( secretKey: string, body: object, headers?: object, routeParam?: string|number): Promise<object>;

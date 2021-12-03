@@ -1,21 +1,14 @@
-import apiCall from "../../helpers/soap";
-import { ApiCallMethodInterface } from "../../helpers/GeneralHelpers";
+import * as zenithBankApis from "./ZenithBank";
 
-const providerPrefix = 'zenith/';
+export default class ZenithBank {
+    secretKey: string;
 
-const wsdlProvider: ApiCallMethodInterface = (secretKey: string, body: object, header?: object) => {
-    let url: string = providerPrefix + 'soap';
-    return apiCall(url,'GET', secretKey, body, header);
+    constructor(key: string){
+        this.secretKey = key;
+    }
+
+    wsdlProvider = (body: object, header?: object) => { return zenithBankApis.wsdlProvider(this.secretKey, body, header) };
+    soapServer = (body: object, header?: object) => { return zenithBankApis.soapServer(this.secretKey, body, header) };
+    encrypter = (body: object, header?: object) => { return zenithBankApis.encrypter(this.secretKey, body, header) };
+
 }
-
-const soapServer: ApiCallMethodInterface = (secretKey: string, body: object, header?: object) => {
-    let url: string = providerPrefix + 'vnubans';
-    return apiCall(url,'POST', secretKey, body, header);
-}
-
-const encrypter: ApiCallMethodInterface = (secretKey: string, body: object, header?: object) => {
-    let url: string = providerPrefix + 'vnubans';
-    return apiCall(url,'GET', secretKey, body, header);
-}
-
-export { wsdlProvider, encrypter, soapServer };
