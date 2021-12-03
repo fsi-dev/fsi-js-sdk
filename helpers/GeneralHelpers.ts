@@ -5,6 +5,7 @@ import SterlingBank from "../providers/SterlingBank";
 import Woven from '../providers/Woven';
 import Zenith from '../providers/ZenithBank';
 import FlutterWave from '../providers/FlutterWave';
+import RelianceHMO from "../providers/RelianceHMO/Index";
 
 interface ApiCallMethodInterface {
     ( secretKey: string, body: object, headers?: object, routeParam?: string|number): Promise<object>;
@@ -30,6 +31,8 @@ const resolveProviderName = (providerName: string, secretKey: string) => {
             return new Zenith(secretKey);
         case 'FlutterWave':
             return new FlutterWave(secretKey);
+        case 'RelianceHMO':
+            return new RelianceHMO(secretKey);
         default:
             throw 'Provider not found';
     }
