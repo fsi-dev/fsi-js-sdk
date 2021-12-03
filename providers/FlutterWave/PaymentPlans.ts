@@ -28,4 +28,6 @@ const cancelAPaymentPlan: ApiCallMethodInterface = (secretKey: string, body: obj
     return apiCall(url,'PUT', secretKey, body, headers);
 }
 
-export { createPaymentPlan, getPaymentPlans, getAPaymentPlan, updateAPaymentPlan, cancelAPaymentPlan };
+let PaymentPlans = { createPaymentPlan, getPaymentPlans, getAPaymentPlan, updateAPaymentPlan, cancelAPaymentPlan };
+
+export default PaymentPlans;

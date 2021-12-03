@@ -33,4 +33,6 @@ const rates: ApiCallMethodInterface = (secretKey: string, body: object, headers?
     return apiCall(url,'GET', secretKey, body, headers);
 }
 
-export { getWalletBalance, getWalletBalancePerCurrency, resolveAccountDetails, getBVNDetails, resolveCardBins, rates };
+let Misc =  { getWalletBalance, getWalletBalancePerCurrency, resolveAccountDetails, getBVNDetails, resolveCardBins, rates };
+
+export default Misc;

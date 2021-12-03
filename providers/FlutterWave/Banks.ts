@@ -13,4 +13,4 @@ const getBankBranches: ApiCallMethodInterface = (secretKey: string, body: object
     return apiCall(url,'GET', secretKey, body, headers);
 }
 
-export { getAllBanks, getBankBranches };
+export { getAllBanks, getBankBranches};

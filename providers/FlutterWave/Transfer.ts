@@ -42,5 +42,7 @@ const checkTransferRates: ApiCallMethodInterface = (secretKey: string, body: obj
     return apiCall(url,'GET', secretKey, body, headers);
 }
 
-export { checkTransferRates, getATransferRetry, getATransfer, 
+let Transfer = { checkTransferRates, getATransferRetry, getATransfer, 
         getAllTransfers, getTransferFee, createBulkTransfer, retryTransfer, createTransfer };
+        
+export default Transfer;

@@ -43,6 +43,8 @@ const getAllRefunds: ApiCallMethodInterface = (secretKey: string, body: object, 
     return apiCall(url,'GET', secretKey, body, headers);
 }
 
-export { getAllTransactions, getTransactionFee, resendTransactionWebhook, 
+let Transactions = { getAllTransactions, getTransactionFee, resendTransactionWebhook, 
     initiateTransactionRefund, getTransactionRefund, verifyTransaction, 
     viewTransactionTimeline, getAllRefunds };
+
+export default Transactions;

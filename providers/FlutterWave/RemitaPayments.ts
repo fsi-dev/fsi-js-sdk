@@ -18,8 +18,8 @@ const getProductAmount: ApiCallMethodInterface = (secretKey: string, body: objec
     return apiCall(url,'GET', secretKey, body, headers);
 }
 
-const createOrder: ApiCallMethodInterface = (secretKey: string, body: object, headers?: object|null, routeParam: any = {}) => {
-    let url: string = providerPrefix + `billers/${routeParam.biller_code}/products/${routeParam.product_code}`;
+const createOrder: ApiCallMethodInterface = (secretKey: string, body: object, headers?: object|null, routeParams: any = {}) => {
+    let url: string = providerPrefix + `billers/${routeParams.biller_code}/products/${routeParams.product_code}`;
     return apiCall(url,'POST', secretKey, body, headers);
 }
 
@@ -28,4 +28,6 @@ const updateOrder: ApiCallMethodInterface = (secretKey: string, body: object, he
     return apiCall(url,'PUT', secretKey, body, headers);
 }
 
-export { getBillPaymentAgencies, getAgencyProducts, getProductAmount, createOrder, updateOrder };
+let RemitaPayments = { getBillPaymentAgencies, getAgencyProducts, getProductAmount, createOrder, updateOrder };
+
+export default RemitaPayments;

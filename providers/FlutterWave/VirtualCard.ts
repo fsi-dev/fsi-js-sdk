@@ -38,10 +38,12 @@ const withdrawFromAVirtualCard: ApiCallMethodInterface = (secretKey: string, bod
     return apiCall(url,'POST', secretKey, body, headers);
 }
 
-const blockOrUnblockVirtualCard: ApiCallMultiParamsInterface = (secretKey: string, body: object, headers: object|null, routeParam: any = {}) => {
-    let url: string = providerPrefix + `${routeParam.id}/status/${routeParam.status_action}`;
+const blockOrUnblockVirtualCard: ApiCallMultiParamsInterface = (secretKey: string, body: object, headers?: object, routeParams: any = {}) => {
+    let url: string = providerPrefix + `${routeParams.id}/status/${routeParams.status_action}`;
     return apiCall(url,'PUT', secretKey, body, headers);
 }
 
-export { createVirtualCard, getAllVirtualCards, getAVirtualCard, fundAVirtualCard, terminateAVirtualCard, 
+let VirtualCard = { createVirtualCard, getAllVirtualCards, getAVirtualCard, fundAVirtualCard, terminateAVirtualCard, 
         getAVirtualCardTransactions, withdrawFromAVirtualCard, blockOrUnblockVirtualCard };
+
+export default VirtualCard;

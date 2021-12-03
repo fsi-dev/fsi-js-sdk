@@ -8,9 +8,9 @@ const listAllChargeBacks: ApiCallMethodInterface = (secretKey: string, body: obj
     return apiCall(url,'GET', secretKey, body, headers);
 }
 
-const update: ApiCallMethodInterface = (secretKey: string, body: object, headers?: object|null) => {
-    let url: string = providerPrefix + 'chargebacks';
-    return apiCall(url,'PUT', secretKey, body, headers);
+const update: ApiCallMethodInterface = (secretKey: string, body: object, headers?: object|null, routeParam?: string|number) => {
+    let url: string = providerPrefix + `chargebacks/${routeParam}`;
+    return apiCall(url, 'PUT', secretKey, body, headers);
 }
 
 export { listAllChargeBacks, update };

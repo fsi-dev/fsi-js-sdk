@@ -54,7 +54,7 @@ const apiCall = async (url: string, method: Methods|string, secretKey: string, b
 
         return result;
 
-    }catch (e) {
+    }catch (e: any ) {
         return {
             codeError: true,
             data: null,

@@ -38,5 +38,7 @@ const fetchStaticVirtualAccounts: ApiCallMethodInterface = (secretKey: string, b
     return apiCall(url,'GET', secretKey, body, headers);
 }
 
-export { createASubAccount, fetchASubAccount, fetchSubAccounts, updateSubAccounts, 
+let PayoutSubAccount = { createASubAccount, fetchASubAccount, fetchSubAccounts, updateSubAccounts, 
         fetchTransactions, fetchBalance, fetchStaticVirtualAccounts };
+
+export default PayoutSubAccount;

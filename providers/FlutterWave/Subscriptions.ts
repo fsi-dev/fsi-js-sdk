@@ -18,4 +18,6 @@ const activateSubscription: ApiCallMethodInterface = (secretKey: string, body: o
     return apiCall(url,'GET', secretKey, body, headers);
 }
 
-export { getAll, cancelSubscription, activateSubscription };
+let Subscriptions = { getAll, cancelSubscription, activateSubscription };
+
+export default Subscriptions;

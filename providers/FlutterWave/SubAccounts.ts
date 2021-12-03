@@ -8,7 +8,7 @@ const createASubAccount: ApiCallMethodInterface = (secretKey: string, body: obje
     return apiCall(url,'POST', secretKey, body, headers);
 }
 
-const getSubAccounts: ApiCallMethodInterface = (secretKey: string, body: object, headers?: object|null, routeParam?: string|number) => {
+const getSubAccounts: ApiCallMethodInterface = (secretKey: string, body: object, headers?: object|null) => {
     let url: string = providerPrefix;
     return apiCall(url,'GET', secretKey, body, headers);
 }
@@ -28,4 +28,6 @@ const deleteASubAccount: ApiCallMethodInterface = (secretKey: string, body: obje
     return apiCall(url,'DELETE', secretKey, body, headers);
 }
 
-export { createASubAccount, getSubAccounts, fetchASubAccount, updateASubAccount, deleteASubAccount };
+let SubAccounts = { createASubAccount, getSubAccounts, fetchASubAccount, updateASubAccount, deleteASubAccount };
+
+export default SubAccounts;
