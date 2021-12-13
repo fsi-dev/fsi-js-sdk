@@ -3,7 +3,8 @@ import Fsi from '../index';
 const testKey: string = 'BpB8hcJslB3iRbDvUoJE0hBEFMkHuKU51624969834';
 const provider: string = 'FlutterWave';
 const header: object = {
-   "x-ibm-client-id": 'f',
+    "Authorization" : "Bearer {SEC_KEY}",
+    "Content-Type" : "application/json"
 };
 
 let initializer = Fsi(testKey, provider);
@@ -18,12 +19,14 @@ let initializer = Fsi(testKey, provider);
             appId: "string",
             appToken: "string"
         };
-        let routeParam = 1;
+        let routeParam = 'Nigeria';
 
         let response = initializer.getAllBanks(body, header, routeParam);
 
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => {
+                expect(res.codeError).toBe(false) 
+            });
         })
     });
 
@@ -37,8 +40,8 @@ let initializer = Fsi(testKey, provider);
 
         let response = initializer.getBankBranches(body, header, routeParam);
 
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -56,8 +59,8 @@ let initializer = Fsi(testKey, provider);
 
         let response = initializer.getAllBanks(body, header, routeParam);
 
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -71,8 +74,8 @@ let initializer = Fsi(testKey, provider);
 
         let response = initializer.validateOTP(body, header, routeParam);
 
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -89,8 +92,8 @@ let initializer = Fsi(testKey, provider);
 
         let response = initializer.createBeneficiary(body);
 
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -103,8 +106,8 @@ let initializer = Fsi(testKey, provider);
 
         let response = initializer.getBeneficiaries(body);
 
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -117,8 +120,8 @@ let initializer = Fsi(testKey, provider);
 
         let response = initializer.fetchBeneficiary(body);
 
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -129,8 +132,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.deleteBeneficiary(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -143,8 +146,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getBillCategories(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -156,8 +159,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 1;
         let response = initializer.validateBillService(body, null, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -168,8 +171,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.bills(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -180,8 +183,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.bulkBills(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -192,8 +195,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.getBillStatus(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -204,8 +207,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.getBillPayments(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -220,8 +223,8 @@ let initializer = Fsi(testKey, provider);
 
         let response = initializer.listAllChargeBacks(body);
 
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -235,8 +238,8 @@ let initializer = Fsi(testKey, provider);
 
         let response = initializer.update(body, header, routeParam);
 
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -250,8 +253,8 @@ let initializer = Fsi(testKey, provider);
 
         let response = initializer.capturePreAuthCharge(body);
 
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -265,8 +268,8 @@ let initializer = Fsi(testKey, provider);
 
         let response = initializer.voidPreAuthCharge(body, header, routeParam);
 
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -279,8 +282,8 @@ let initializer = Fsi(testKey, provider);
         let routeParam = 1;
         let response = initializer.refundPreAuthCharge(body, header, routeParam);
 
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -292,8 +295,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getWalletBalance(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -305,8 +308,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 1;
         let response = initializer.getWalletBalancePerCurrency(body, null, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -317,8 +320,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.resolveAccountDetails(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -329,8 +332,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.getBVNDetails(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -341,8 +344,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.resolveCardBins(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -353,8 +356,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.rates(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -366,8 +369,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.createPaymentPlan(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -378,8 +381,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.getPaymentPlans(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -391,8 +394,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 1;
         let response = initializer.getAPaymentPlan(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -404,8 +407,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 1;
         let response = initializer.updateAPaymentPlan(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -416,8 +419,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.cancelAPaymentPlan(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -429,8 +432,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.createAPayoutSubAccount(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -441,8 +444,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.fetchAPayoutSubAccount(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -453,8 +456,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.fetchPayoutSubAccounts(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -465,8 +468,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.updatePayoutSubAccounts(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -478,8 +481,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 2;
         let response = initializer.fetchTransactions(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -491,8 +494,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 2;
         let response = initializer.fetchBalance(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -503,8 +506,8 @@ let initializer = Fsi(testKey, provider);
             accountNumber: "4303769016"
         };
         let response = initializer.fetchStaticVirtualAccounts(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -516,8 +519,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getBillPaymentAgencies(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -529,8 +532,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 3;
         let response = initializer.getAgencyProducts(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -542,8 +545,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParams = { id: 1, name: 'name'};
         let response = initializer.getProductAmount(body, header, routeParams);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -555,8 +558,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParams = { id: 1, name: 'name'};
         let response = initializer.createOrder(body, header, routeParams);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -568,8 +571,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 4;
         let response = initializer.updateOrder(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -581,8 +584,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.allSettlements(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -594,8 +597,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 1;
         let response = initializer.getASettlement(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -607,8 +610,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.createASubAccount(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -619,8 +622,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getSubAccounts(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -632,8 +635,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 3;
         let response = initializer.fetchASubAccount(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -645,8 +648,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 3;
         let response = initializer.updateASubAccount(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -658,8 +661,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 3;
         let response = initializer.deleteASubAccount(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -671,8 +674,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getAll(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -684,8 +687,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 3;
         let response = initializer.cancelSubscription(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -697,8 +700,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 3;
         let response = initializer.activateSubscription(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
 
@@ -710,8 +713,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getAllTransactions(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -722,8 +725,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getTransactionFee(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -734,8 +737,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.resendTransactionWebhook(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -746,8 +749,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.initiateTransactionRefund(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -758,8 +761,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getTransactionRefund(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -770,8 +773,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.verifyTransaction(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -782,8 +785,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.viewTransactionTimeline(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -794,8 +797,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getAllRefunds(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -807,8 +810,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.createTransfer(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -819,8 +822,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.retryTransfer(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -831,8 +834,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.createBulkTransfer(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -843,8 +846,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getTransferFee(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -855,8 +858,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getAllTransfers(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -867,8 +870,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getATransfer(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -879,8 +882,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getATransferRetry(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -891,8 +894,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.checkTransferRates(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -904,8 +907,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.createVirtualCard(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -916,8 +919,8 @@ let initializer = Fsi(testKey, provider);
             appToken: "string"
         };
         let response = initializer.getAllVirtualCards(body);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -929,8 +932,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 5;
         let response = initializer.getAVirtualCard(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -942,8 +945,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 5;
         let response = initializer.fundAVirtualCard(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -955,8 +958,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 5;
         let response = initializer.terminateAVirtualCard(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -968,8 +971,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 5;
         let response = initializer.getAVirtualCardTransactions(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -981,8 +984,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParam = 5;
         let response = initializer.withdrawFromAVirtualCard(body, header, routeParam);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     
@@ -994,8 +997,8 @@ let initializer = Fsi(testKey, provider);
         };
         let routeParams = {id: 1, status_action: 'block'};
         let response = initializer.blockOrUnblockVirtualCard(body, header, routeParams);
-        it('Should return 200 status code', () => {
-            return response.then( res => expect(res.status).toBe(200));
+        it('Request should be delivered and no code error', () => {
+            return response.then( res => expect(res.codeError).toBe(false));
         })
     });
     

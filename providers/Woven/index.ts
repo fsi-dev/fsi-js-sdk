@@ -1,4 +1,5 @@
 import * as wovenFinanceApis from "./VirtualAccount";
+import { createVNubanAndCustomer } from "./VirtualAccount";
 import * as wovenTransactions from "./Transactions";
 import * as wovenSettlements from "./Settlements";
 
@@ -10,7 +11,7 @@ export default class Woven {
     }
 
     // Virtual accounts
-    createVNubanAndCustomer = (body: object, header?: object) => { return wovenFinanceApis.createVNubanAndCustomer(this.secretKey, body, header) };
+    createVNubanAndCustomer = (body: object, header?: object) => { return createVNubanAndCustomer(this.secretKey, body, header) };
     createVNubanForExisitingCustomer = (body: object, header?: object) => { return wovenFinanceApis.createVNubanForCustomer(this.secretKey, body, header) };
     editVAccount = (body: object, header?: object) => { return wovenFinanceApis.editVAccount(this.secretKey, body, header) };
     listVirtualAccounts = (body: object, header?: object) => { return wovenFinanceApis.fetchVirtualAccounts(this.secretKey, body, header) };

@@ -13,9 +13,9 @@ const voidPreAuthCharge: ApiCallMethodInterface = (secretKey: string, body: obje
     return apiCall(url,'GET', secretKey, body, headers);
 }
 
-const refundPreAuthCharge = (secretKey: string, body: object, headers?: object|null) => {
+const refundPreAuthCharge: ApiCallMethodInterface = async (secretKey: string, body: object, headers?: object|null) => {
     let url: string = providerPrefix + 'banks/token';
-    return apiCall(url,'POST', secretKey, body, headers);
+    return await apiCall(url,'POST', secretKey, body, headers);
 }
 
 export { capturePreAuthCharge, voidPreAuthCharge, refundPreAuthCharge };

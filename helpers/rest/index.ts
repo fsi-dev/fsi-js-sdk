@@ -7,10 +7,11 @@ export const getUrl = (url: string) => `${constants.baseUrl}${url}`;
 
 interface Response {
     codeError?: boolean,
+    requestDelivered?: boolean,
     success?: boolean,
-    data?: object;
-    status?: number;
-    message?: string;
+    data?: object,
+    status?: number,
+    message?: string
 }
 
 // export const settings = {
@@ -112,11 +113,11 @@ const apiCall = async (
     method: Methods | string,
     secretKey: string,
     body: object | null,
-    headers?: object | null): Promise<Response> => {
+    headers?: object | null ): Promise<Response> => {
 
-        const fullUrl: string = getUrl(url);
-        const isGetRequest = method.toLowerCase() === 'get';
-        const options: object = {
+    const fullUrl: string = getUrl(url);
+    const isGetRequest = method.toLowerCase() === 'get';
+    const options: object = {
         url: fullUrl,
         method: method,
         params: isGetRequest ? body : null,
@@ -155,42 +156,12 @@ const apiCall = async (
             result.data = error.request;
         } else {
             // Something happened in setting up the request that triggered an Error
+            result.codeError = true;
             result.message = error.message
         }
         return result
     }
 
-    // axios(options)
-    //     .then((res) => {
-    //         result.success = true;
-    //         result.status = res.status;
-    //         result.data = res.data;
-    //     })
-    //     .catch((error) => {
-    //         if (error.response) {
-    //             // The request was made and the server responded with a status code
-    //             // that falls out of the range of 2xx
-    //             result.status = error.response.status;
-    //             result.message = error.message;
-    //             result.data = error.response.data;
-    //
-    //         } else if (error.request) {
-    //             result.data = error.request;
-    //         } else {
-    //             // Something happened in setting up the request that triggered an Error
-    //             result.message = error.message
-    //         }
-    //     });
-
-    // } catch (e) {
-    //     return {
-    //         codeError: true,
-    //         data: null,
-    //         success: false,
-    //         message: 'message', //e.message
-    //         status: null
-    //     };
-    // }
 };
 
 export default apiCall;

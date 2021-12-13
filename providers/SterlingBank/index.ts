@@ -1,4 +1,4 @@
-import { interbankNameEnquiry, interbankTransfer, mobileWallet, getBillersPaymentItems, getBillersISW } from './SterlingBank';
+import { interbankNameEnquiry, mobileWallet, getBillersPaymentItems, getBillersISW } from './SterlingBank';
 
 
 
@@ -13,9 +13,9 @@ export default class SterlingBank {
         return interbankNameEnquiry(this.secretKey, body, header)
     };
 
-    interbankTransfer = (body: object, header?: object) => { 
-        return interbankTransfer(this.secretKey, body, header) 
-    };
+    // interbankTransfer = (body: object, header?: object) => { 
+    //     return interbankTransfer(this.secretKey, body, header) 
+    // };
 
     mobileWallet = (body: object, header?: object) => { 
         return mobileWallet(this.secretKey, body, header) 
