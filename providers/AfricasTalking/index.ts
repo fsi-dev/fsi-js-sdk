@@ -11,7 +11,7 @@ export default class AfricasTalking {
 
     /*Airtime*/
     sendAirtime = (body: object, header?: object) =>  africasTalkingAirtime.sendAirtime(this.secretKey, body, header) ;
-    getTransactionStatus = (body: object, header?: object) =>  africasTalkingAirtime.transactionStatus(this.secretKey, body, header) ;
+    // getTransactionStatus = (body: object, header?: object) =>  africasTalkingAirtime.transactionStatus(this.secretKey, body, header) ;
 
     /*Sms*/
     sendSms = (body: object, header?: object) =>  africasTalkingSms.sendSms(this.secretKey, body, header) ;

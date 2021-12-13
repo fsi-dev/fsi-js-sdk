@@ -9,8 +9,8 @@ const sendAirtime: ApiCallMethodInterface = (secretKey: string, body: object|nul
 }
 
 const transactionStatus = (secretKey: string, body: object|null, header?: object|null) => {
-    let url: string = providerPrefix + '/query/transaction/find';
-    return apiCall(url,'GET', secretKey, body, header);
+    // let url: string = providerPrefix + '/query/transaction/find';
+    // return apiCall(url,'GET', secretKey, body, header);
 }
 
 
