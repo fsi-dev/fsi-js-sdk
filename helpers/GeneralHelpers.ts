@@ -7,6 +7,9 @@ import Zenith from '../providers/ZenithBank';
 import FlutterWave from '../providers/FlutterWave';
 import RelianceHMO from "../providers/RelianceHMO/Index";
 import Baxi from "../providers/Baxi";
+import Axamansard from "../providers/Axmsd";
+import UnionBank from "../providers/UnionBank";
+import WemaBank from "../providers/WemaBank";
 
 interface ApiCallMethodInterface {
     ( secretKey: string, body: object, headers?: object, routeParam?: string|number): Promise<object>;
@@ -17,25 +20,33 @@ interface ApiCallMultiParamsInterface {
 }
 
 const resolveProviderName = (providerName: string, secretKey: string) => {
-    switch(providerName){
-        case 'AfricasTalking':
+    let provider = providerName.toLowerCase();
+
+    switch(provider){
+        case 'africastalking':
             return new AfricasTalking(secretKey);
-        case 'EcoBank':
+        case 'ecobank':
             return new EcoBank(secretKey);
-        case 'FCMB':
+        case 'fcmb':
             return new FCMB(secretKey);
-        case 'SterlingBank':
+        case 'sterlingbank':
             return new SterlingBank(secretKey);
-        case 'Woven':
+        case 'woven':
             return new Woven(secretKey);
-        case 'Zenith':
+        case 'zenith':
             return new Zenith(secretKey);
-        case 'FlutterWave':
+        case 'flutterwave':
             return new FlutterWave(secretKey);
-        case 'RelianceHMO':
+        case 'reliancehmo':
             return new RelianceHMO(secretKey);
-        case 'Baxi':
+        case 'baxi':
             return new Baxi(secretKey);
+        case 'axamansard':
+            return new Axamansard(secretKey);
+        case 'unionbank':
+            return new UnionBank(secretKey);
+        case 'wemabank':
+            return new WemaBank(secretKey);
         default:
             throw 'Provider not found';
     }

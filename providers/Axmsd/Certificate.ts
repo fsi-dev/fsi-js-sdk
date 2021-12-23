@@ -13,18 +13,18 @@ const downloadTravelCertificate: ApiCallMethodInterface = (secretKey: string, bo
     return apiCall(url,'GET', secretKey, body, headers);
 }
 
-const downloadMotorCertificate: ApiCallMethodInterface = (secretKey: string, body: object, headers?: object|null) => {
-    let url: string = providerPrefix + '/DownloadCertificate';
+const downloadMotorCertificate: ApiCallMethodInterface = (secretKey: string, body: object, headers?: object|null, transactionReference?: string|number) => {
+    let url: string = providerPrefix + '/certificates/motor/download/' + transactionReference;
     return apiCall(url,'GET', secretKey, body, headers);
 }
 
-const postTravelCertificate: ApiCallMethodInterface = (secretKey: string, body: object, headers?: object|null) => {
-    let url: string = providerPrefix + '/DownloadCertificate';
+const postTravelCertificate: ApiCallMethodInterface = (secretKey: string, body: object, headers?: object|null, transactionReference?: string|number) => {
+    let url: string = providerPrefix + '/certificates/travel/send-certificate/' + transactionReference;
     return apiCall(url,'POST', secretKey, body, headers);
 }
 
-const postMotorCertificate: ApiCallMethodInterface = (secretKey: string, body: object, headers?: object|null) => {
-    let url: string = providerPrefix + '/DownloadCertificate';
+const postMotorCertificate: ApiCallMethodInterface = (secretKey: string, body: object, headers?: object|null, transactionReference?: string|number) => {
+    let url: string = providerPrefix + '/certificates/motor/send-certificate/' + transactionReference;
     return apiCall(url,'POST', secretKey, body, headers);
 }
 

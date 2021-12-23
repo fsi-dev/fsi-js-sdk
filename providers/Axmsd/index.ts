@@ -15,9 +15,9 @@ export default class Axamansard {
     /*Certificates*/
     downloadCertificate = (body: object, header: object) => { return Certificate.downloadCertificate(this.secretKey, body, header) };
     downloadTravelCertificate = (body: object, header: object, certId: string | number) => { return Certificate.downloadTravelCertificate(this.secretKey, body, header, certId) };
-    downloadMotorCertificate = (body: object, header: object) => { return Certificate.downloadMotorCertificate(this.secretKey, body, header) };
-    postTravelCertificate = (body: object, header: object) => { return Certificate.postTravelCertificate(this.secretKey, body, header) };
-    postMotorCertificate = (body: object, header: object) => { return Certificate.postMotorCertificate(this.secretKey, body, header) };
+    downloadMotorCertificate = (body: object, header: object, transactionReference: string) => { return Certificate.downloadMotorCertificate(this.secretKey, body, header, transactionReference) };
+    postTravelCertificate = (body: object, header: object, transactionReference: string) => { return Certificate.postTravelCertificate(this.secretKey, body, header, transactionReference) };
+    postMotorCertificate = (body: object, header: object, transactionReference: string) => { return Certificate.postMotorCertificate(this.secretKey, body, header, transactionReference) };
     
     
     /*HealthServices*/
@@ -33,7 +33,7 @@ export default class Axamansard {
 
     /*MotorServices*/
     getMotorQuote = (body: object, header: object) => { return MotorServices.getMotorQuote(this.secretKey, body, header) };
-    getRiders = (body: object, header: object, state: string) => { return MotorServices.getRiders(this.secretKey, body, header, state) };
+    getRiders = (body: object, header: object) => { return MotorServices.getRiders(this.secretKey, body, header) };
     getPolicyType = (body: object, header: object) => { return MotorServices.getPolicyType(this.secretKey, body, header) };
     getCarType = (body: object, header: object) => { return MotorServices.getCarType(this.secretKey, body, header) };
     getAllCars = (body: object, header: object) => { return MotorServices.getAllCars(this.secretKey, body, header) };
