@@ -2,16 +2,16 @@
 <br>
 # FSI JS SDK
 
-##About FSI
+### **`About FSI`**
 Our essence is to support and grow a collaborative and innovative ecosystem of players in the financial services space. The association aims to lower barriers to entry, promote a level playing field for innovators without undermining the safety and security of the payment system for the general public and also advocate policies and regulations that encourage.
 
-##Vision
+### **`Vision`**
 To build, support and grow a collaborative and innovative ecosystem of players in the Financial Services space
 
-##Introduction
+### **`Introduction`**
 This package provides services for integrating provider APIs into your application in written code. The sdk was built for easy access of the providers under FSI to be easily integrated into your development codebase.
 
-##API Providers
+### **`API Providers`**
 This package has numerous API providers under FSI. You can find the API providers in your FSI sandbox dashboard (`https://fsi.ng/members/apis`) .
 
 ##Installation
@@ -29,11 +29,11 @@ This package has numerous API providers under FSI. You can find the API provider
     + Testing
     + Live
 
-##Contributing
+### **`Contributing`**
 Please see our [Contribution Guide](https://docs.google.com/document/d/1qOXxA8IMm4xKo1LQd8Fodrn8Hk6VL70As5YTX9w_9yo/edit?usp=sharing) for details.
 
-##Security
+### **`Security`**
 If you discover any security-related issues, please email info@fsi.ng instead of using the issue tracker.
 
-##Contact Us
+### **`Contact Us`**
 In the case of security vulnerabilities, bug detection and other development queries, you can contact info@fsi.ng and also you can call us on +2348033080471.
